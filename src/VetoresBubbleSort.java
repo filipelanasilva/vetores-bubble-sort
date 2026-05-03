@@ -5,7 +5,7 @@ public class VetoresBubbleSort {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);  // criação de variável para aceitar valores vindos do usuário
+        Scanner scanner = new Scanner(System.in);  // criação de objeto para aceitar valores vindos do usuário
 
         int[] vetorInt = new int[5];  // vetor do tipo int com 5 posições definidas, a primeira denominada 0 e a última denominada 4
 
@@ -30,17 +30,17 @@ public class VetoresBubbleSort {
         scanner.close();
 
         System.out.println("\nVETOR NÚMERICO ORDENADO DE MODO CRESCENTE:");
-        ordenaVetorIntCrescente(vetorInt);  // chamada de um método que ordenada de forma decrescente valores do tipo int de cada posição do vetor
+        ordenaVetorIntCrescente(vetorInt);  // chamada de um método que ordena de forma crescente valores do tipo int de cada posição do vetor
                                             // usado como argumento
         System.out.println("\nVETOR NÚMERICO ORDENADO DE MODO DECRESCENTE:");
-        ordenaVetorIntDecrescente(vetorInt);  // chamada de um método que ordenada de forma crescente valores do tipo int de cada posição do vetor
+        ordenaVetorIntDecrescente(vetorInt);  // chamada de um método que ordena de forma decrescente valores do tipo int de cada posição do vetor
                                               // usado como argumento
         System.out.println("\nVETOR ALFABÉTICO ORDENADO DE MODO CRESCENTE:");
         ordenaVetorStringCrescente(vetorString);  // chamada de um método que ordena de forma alfabética crescente valores do tipo String de cada
                                                   // posição do vetor de A - Z, sendo A menor que as letras seguintes
         System.out.println("\nVETOR ALFABÉTICO ORDENADO DE MODO DECRESCENTE:");
-        ordenaVetorStringDecrescente(vetorString);  // chamada de um método que ordena de forma alfabética crescente valores do tipo String de
-                                                    // cada posição do vetor de A - Z, sendo A menor que as letras seguintes
+        ordenaVetorStringDecrescente(vetorString);  // chamada de um método que ordena de forma alfabética decrescente valores do tipo String de
+                                                    // cada posição do vetor de A - Z, sendo Z maior que as letras anteriores
 
     }
 
@@ -49,14 +49,14 @@ public class VetoresBubbleSort {
 
         for (int i = 0; i < vetor.length; i++) {  // o loop repetirá até a última posição do vetor atribuído a ela
 
-            for (int j = i; j < vetor.length; j++) {  // o loop repetirá enquanto o valor de (i) que é atribuído a variável (j) for menor que a
+            for (int j = i; j < vetor.length; j++) {  // o loop repetirá enquanto o valor de (i) que é atribuído a variável (j) for "menor" que a
                                                       // quantidade total de posições do vetor
 
                 if (vetor[j] < vetor[i]) {  // se o valor da posição (j) de vetor for menor que o valor da posição (i) ▽ ▽
 
-                    int aux = vetor[i];  // variável de auxílio que recebe o valor da posição (i) de vetor
+                    int aux = vetor[i];  // variável de auxílio que guarda o valor da posição (i) de vetor
                     vetor[i] = vetor[j];  // valor da posição (i) de vetor recebe o valor da posição (j)
-                    vetor[j] = aux;  // valor da posição (j) de vetor recebe o valor da variável aux
+                    vetor[j] = aux;  // valor da posição (j) de vetor é reescrito com o valor guardado da posição (i) na variável aux
 
                 }
 
@@ -64,7 +64,7 @@ public class VetoresBubbleSort {
 
         }
 
-        exibeValorVetorInteiro(vetor);  // chamada de método para exibir valor de cada posição do vetor usado como argumento
+        exibeValorVetorInteiro(vetor);  // chamada de método para exibir os valores de cada posição do vetor usado como argumento
 
     }
 
@@ -77,9 +77,9 @@ public class VetoresBubbleSort {
 
                 if (vetor[j] > vetor[i]) {  // se o valor da posição (j) de vetor for maior que o valor da posição (i) ▽ ▽
 
-                    int aux = vetor[i];  // variável de auxílio que recebe o valor da posição (i) de vetor
+                    int aux = vetor[i];  // variável de auxílio que guarda o valor da posição (i) de vetor
                     vetor[i] = vetor[j];  // valor da posição (i) de vetor recebe o valor da posição (j)
-                    vetor[j] = aux;  // valor da posição (j) de vetor recebe o valor da variável aux
+                    vetor[j] = aux;  // valor da posição (j) de vetor é reescrito com o valor guardado da posição (i) na variável aux
 
                 }
 
@@ -87,7 +87,7 @@ public class VetoresBubbleSort {
 
         }
 
-        exibeValorVetorInteiro(vetor);  // chamada de método para exibir valor de cada posição do vetor usado como argumento
+        exibeValorVetorInteiro(vetor);  // chamada de método para exibir os valores de cada posição do vetor usado como argumento
 
     }
 
@@ -107,7 +107,7 @@ public class VetoresBubbleSort {
 
         for (int i = 0; i < vetor.length; i++) {  // o loop repetirá até a última posição do vetor atribuído a ele
 
-            for (int j = i; j < vetor.length; j++) {  // o loop repetirá enquanto o valor de (i) que é atribuído a variável (j) for menor que a
+            for (int j = i; j < vetor.length; j++) {  // o loop repetirá enquanto o valor de (i) que é atribuído a variável (j) for "menor" que a
                                                       // quantidade total de posições do vetor
 
                 if (vetor[j].compareTo(vetor[i]) < 0) {  // se o valor resultante da comparação lexicográfica entre a posição (j) do vetor com o
@@ -115,7 +115,7 @@ public class VetoresBubbleSort {
 
                     String aux = vetor[i];  // variável de auxílio que recebe o valor da posição (i) de vetor
                     vetor[i] = vetor[j];  // valor da posição (i) de vetor recebe o valor da posição (j)
-                    vetor[j] = aux;  // valor da posição (j) de vetor recebe o valor da variável aux
+                    vetor[j] = aux;  // valor da posição (j) de vetor é reescrito com o valor guardado da posição (i) na variável aux
 
                 }
 
@@ -123,7 +123,7 @@ public class VetoresBubbleSort {
 
         }
 
-        exibeValorVetorString(vetor);  // chamada de método para exibir valor de cada posição do vetor usado como argumento
+        exibeValorVetorString(vetor);  // chamada de método para exibir os valores de cada posição do vetor usado como argumento
 
     }
 
@@ -135,11 +135,11 @@ public class VetoresBubbleSort {
                                                       // quantidade total de posições do vetor
 
                 if (vetor[j].compareTo(vetor[i]) > 0) {  // se o valor resultante da comparação lexicográfica entre a posição (j) do vetor com o
-                                                         // valor da posição (i) retornar um valor menor que zero ▽ ▽
+                                                         // valor da posição (i) retornar um valor maior que zero ▽ ▽
 
                     String aux = vetor[i];  // variável de auxílio que recebe o valor da posição (i) de vetor
                     vetor[i] = vetor[j];  // valor da posição (i) de vetor recebe o valor da posição (j)
-                    vetor[j] = aux;  // valor da posição (j) de vetor recebe o valor da variável aux
+                    vetor[j] = aux;  // valor da posição (j) de vetor é reescrito com o valor guardado da posição (i) na variável aux
 
                 }
 
@@ -147,7 +147,7 @@ public class VetoresBubbleSort {
 
         }
 
-        exibeValorVetorString(vetor);  // chamada de método para exibir valor de cada posição do vetor usado como argumento
+        exibeValorVetorString(vetor);  // chamada de método para exibir os valores de cada posição do vetor usado como argumento
 
     }
 
